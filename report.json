@@ -1,0 +1,15 @@
+{
+    "scan_datum": "2026-03-16 00:18",
+    "eigene_ip": "10.6.228.2",
+    "hosts": [
+        {
+            "ip": "10.6.228.2",
+            "offene_ports": [
+                {
+                    "port": 3306,
+                    "service": "MySQL"
+                }
+            ]
+        }
+    ]
+}
