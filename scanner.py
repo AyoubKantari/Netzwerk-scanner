@@ -3,6 +3,8 @@ import subprocess
 import concurrent.futures
 import json
 from datetime import datetime
+import os
+
 
 def get_eigene_ip():
 
@@ -77,7 +79,7 @@ def scan_ports(ip):
     return offene_ports
 
 if __name__ ==  "__main__":
-    eigene_ip = get_eigene_ip()
+    eigene_ip = os.environ.get("TARGET_IP", get_eigene_ip())
 
     print(f"Meine IP: {eigene_ip}")
     
