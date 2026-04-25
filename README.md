@@ -37,3 +37,9 @@ python scanner.py
 ## Hinweis
 Universitätsnetzwerke blockieren ICMP-Ping aus sicherheitsgründen
 Das Tool funktioniert optimal in lokalen heimnetzwerken
+## Docker
+
+```bash
+docker build -t netzwerk-scanner .
+docker run --network host -e TARGET_IP=192.168.1.5 netzwerk-scanner
+```
