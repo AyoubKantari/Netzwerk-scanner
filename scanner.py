@@ -69,9 +69,8 @@ def scan_ports(ip):
         futures = {executor.submit(scan_port, ip, port): port 
                    for port in BEKANNTE_PORTS.keys()}
         for future in concurrent.futures.as_completed(futures):
-
-          result = future.result()
-        if result:
+            result = future.result()
+            if result:
                 port, service = result
                 offene_ports.append((port, service))
                 print(f"  Port {port} offen → {service}")
