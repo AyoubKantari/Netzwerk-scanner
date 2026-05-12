@@ -1,8 +1,10 @@
 FROM python:3.12-slim
-RUN apt-get update && apt-get install -y iputils-ping
+RUN apt-get update && apt-get install -y iputils-ping && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 COPY scanner.py scanner.py
 COPY app.py app.py
-CMD ["python3", "app.py"]
+EXPOSE 5000
+CMD ["python", "app.py"]
 
